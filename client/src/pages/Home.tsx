@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { LoadingSpinner } from '@/components/ui/loading-spinner';
-import { initiateOAuthFlow } from '@/lib/auth';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { LoadingSpinner } from "@/components/ui/loading-spinner";
+import { initiateOAuthFlow } from "@/lib/auth";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -12,7 +12,7 @@ export default function Home() {
     try {
       await initiateOAuthFlow();
     } catch (error) {
-      console.error('Login error:', error);
+      console.error("Login error:", error);
       setIsLoading(false);
     }
   };
@@ -47,10 +47,14 @@ export default function Home() {
                 />
               </svg>
             </div>
-            <h1 className="text-2xl font-semibold mt-4 text-gray-900">Financial Dashboard</h1>
-            <p className="text-gray-600 mt-2">Get insights into your financial health</p>
+            <h1 className="text-2xl font-semibold mt-4 text-gray-900">
+              Stability One
+            </h1>
+            <p className="text-gray-600 mt-2">
+              A fully backed stablecoin for the Capital One ecosystem.
+            </p>
           </div>
-          
+
           <div className="my-8">
             <Button
               onClick={handleLogin}
@@ -80,14 +84,14 @@ export default function Home() {
               )}
             </Button>
           </div>
-          
+
           <div className="text-sm text-gray-600">
             <p>
-              By continuing, you agree to our{' '}
+              By continuing, you agree to our{" "}
               <a href="#" className="text-primary hover:underline">
                 Terms of Service
-              </a>{' '}
-              and{' '}
+              </a>{" "}
+              and{" "}
               <a href="#" className="text-primary hover:underline">
                 Privacy Policy
               </a>
@@ -96,6 +100,9 @@ export default function Home() {
           </div>
         </CardContent>
       </Card>
+      <footer className="fixed bottom-0 w-full text-center py-4 text-gray-500 text-sm">
+        Stability One is not affiliated with Capital One.
+      </footer>
     </div>
   );
 }
