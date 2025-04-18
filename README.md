@@ -1,6 +1,11 @@
-# FinDash - Financial Dashboard
+# Stability One
+Proof of Concept centralized over-colalteralized stablecoin project using the Capital One API.
 
-A modern financial dashboard application with Capital One OAuth integration. FinDash provides users with a clean, intuitive interface to view their financial information including account balances, transaction history, spending categories, and upcoming bills.
+Unaffiliated with Capital One. This is a personal project not intended for real use.
+
+Solidity Smart contracts for minting ERC-20 stablecoins on Arbitrum in the /contracts folder. The rest of this project is the front end for a user application.
+
+Unaudited.
 
 ## Features
 
