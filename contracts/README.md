@@ -1,66 +1,13 @@
-## Foundry
+# Stability One – Contracts
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
-
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+Features:
+- ERC-20 Standard token, Stablecoin
+- Owner can set Minter and other roles.
+- Minter role can mint new stablecoins when they are backed by centralized collateral off-chain.  
+- New transfer type, `delaySafeTransfer()` that can be reversed by the sender.
+- New stablecoins can be minted permissionlessly by depositing USDC at any time by anyone, with a timelock and size cap.
+- Owner can set Manager role.
+- Manager role can withdraw deposited USDC or other tokens.
+- Manager can add a new stablecoin type to be added as a deposit, with a time delay.
+- The Owner can add the Pauser role.
+- The Pauser role and pause transfers of the entire contract, or add a particular address to the blockList and prevent them from transfering.
